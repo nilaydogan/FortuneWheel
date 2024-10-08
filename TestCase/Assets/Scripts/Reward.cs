@@ -13,7 +13,7 @@ namespace TestCase.Gameplay
         public void SetRewardData(WheelRewards.RewardData rewardData)
         {
             _icon.sprite = rewardData.RewardSprite;
-            _valueText.text = rewardData.RewardValue.ToString();
+            _valueText.text = rewardData.RewardValue > 1 ? "x" + rewardData.RewardValue : "";
         }
     }
 }

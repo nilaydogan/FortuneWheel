@@ -6,19 +6,17 @@ namespace TestCase.Gameplay
     {
         #region Properties
 
-        public int CurrentZone => _currentZone;
+        public int CurrentZone { get; private set; }
 
         #endregion
         
         #region Fields
 
-        private int _currentZone;
-
         #endregion
         
         public void Initialize()
         {
-            _currentZone = PlayerPrefs.GetInt("CurrentZone", 0);
+            CurrentZone = PlayerPrefs.GetInt("CurrentZone", 0);
         }
     }
 }

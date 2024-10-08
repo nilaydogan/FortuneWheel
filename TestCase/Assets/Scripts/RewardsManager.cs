@@ -17,7 +17,7 @@ public class RewardsManager : MonoBehaviour
     public void Initialize()
     {
         CreateRewards();
-        PlaceImagesOnWheel();
+        PlaceRewardsOnWheel();
     }
 
     public void SetUpRewards(List<WheelRewards.RewardData> rewardDataList)
@@ -37,7 +37,7 @@ public class RewardsManager : MonoBehaviour
             _rewardImageRectTransforms.Add(rewardImage);
         }
     }
-    private void PlaceImagesOnWheel()
+    private void PlaceRewardsOnWheel()
     {
         var angleStep = 360f / _rewardImageRectTransforms.Count;
         for (var i = 0; i < _rewardImageRectTransforms.Count; i++)
@@ -46,6 +46,7 @@ public class RewardsManager : MonoBehaviour
             var x = Mathf.Sin(angle * Mathf.Deg2Rad) * _radius;
             var y = Mathf.Cos(angle * Mathf.Deg2Rad) * _radius;
             _rewardImageRectTransforms[i].anchoredPosition = new Vector2(x, y);
+            _rewardImageRectTransforms[i].localRotation = Quaternion.Euler(0, 0, -angle);
         }
     }
 }

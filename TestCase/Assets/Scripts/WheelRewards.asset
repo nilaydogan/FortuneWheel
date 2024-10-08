@@ -13,5 +13,69 @@ MonoBehaviour:
   m_Name: WheelRewards
   m_EditorClassIdentifier: 
   _zoneRewardDataList:
-  - RewardList: []
-  - RewardList: []
+  - RewardList:
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: 1e597a89d0fa37643b426587120b0285, type: 3}
+      RewardValue: 10
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: 14d7830dce8f0d3469d1fbd184c8f10c, type: 3}
+      RewardValue: 100
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: f773fb795df939348a0a8475bc88ee10, type: 3}
+      RewardValue: 1
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: 96b459e918924e943b983ca1c675295a, type: 3}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: 14d7830dce8f0d3469d1fbd184c8f10c, type: 3}
+      RewardValue: 300
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: 1e597a89d0fa37643b426587120b0285, type: 3}
+      RewardValue: 50
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: 2b43a5bda189f6a48a46632eecb976c5, type: 3}
+      RewardValue: 1
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 21300000, guid: ec6120410a3de2f4fa77cc128ebb95e2, type: 3}
+      RewardValue: 1
+      RewardSize: {x: 0, y: 0}
+  - RewardList:
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardName: 0
+      RewardSprite: {fileID: 0}
+      RewardValue: 0
+      RewardSize: {x: 0, y: 0}
