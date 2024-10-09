@@ -15,6 +15,7 @@ namespace TestCase.Gameplay
         [SerializeField] private ZoneManager _zoneManager;
         [SerializeField] private Transform _wheelTransform;
         [SerializeField] private Sprite _wheelSilverSkin, _wheelGoldSkin;
+        [SerializeField] private Sprite _indicatorSilverSkin, _indicatorGoldSkin;
         
         private Button _spinButton;
         private int _currentZone;
@@ -80,7 +81,7 @@ namespace TestCase.Gameplay
             
         }
         
-        private void UpdateCurrentZone()
+        private void UpdateWheelSkin()
         {
             
         }
