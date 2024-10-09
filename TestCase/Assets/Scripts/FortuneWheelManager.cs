@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using DG.Tweening;
 using TestCase.Gameplay.Data;
+using TestCase.Gameplay.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,16 +11,14 @@ namespace TestCase.Gameplay
         #region Fields
 
         [SerializeField] private WheelRewards _wheelRewards;
-        [SerializeField] private RewardsManager _rewardsManager;
+        [SerializeField] private Wheel _wheel;
         [SerializeField] private ZoneManager _zoneManager;
-        [SerializeField] private Transform _wheel;
+        [SerializeField] private Transform _wheelTransform;
+        [SerializeField] private Sprite _wheelSilverSkin, _wheelGoldSkin;
         
         private Button _spinButton;
-        
         private int _currentZone;
-        
-        private List<WheelRewards.RewardData> _currentRewardDataList;
-        private float _duration = 5f;
+        private float _spinDuration = 5f;
         private float _initialSpeed = 500f; 
 
         #endregion
@@ -30,10 +28,9 @@ namespace TestCase.Gameplay
         private void Start()
         {
             _zoneManager.Initialize();
-            _rewardsManager.Initialize();
             
-            _currentRewardDataList = _wheelRewards.GetRewardDataList(_zoneManager.CurrentZone);
-            _rewardsManager.SetUpRewards(_currentRewardDataList);
+            _wheel.Initialize();
+            _wheel.SetUpRewards(_wheelRewards.GetRewardDataList(_zoneManager.CurrentZone));
         }
         
         private void OnValidate()
@@ -62,14 +59,19 @@ namespace TestCase.Gameplay
 
         private void SpinWheel()
         {
-            var targetRewardIndex = Random.Range(0, _currentRewardDataList.Count);
-            var anglePerReward = 360f / _currentRewardDataList.Count;
+            var rewardCount = _wheel.GetRewardCount();
+            
+            //select a random reward to stop at
+            var targetRewardIndex = Random.Range(0, rewardCount);
+            var anglePerReward = 360f / rewardCount;
             var targetAngle = targetRewardIndex * anglePerReward;
+            
+            //add random extra rotations to make it look natural
             var extraRotations = Random.Range(1, 5);
             var totalRotation = -(360f * extraRotations + targetAngle);
 
-            _wheel
-                .DORotate(new Vector3(0, 0, totalRotation), _duration, RotateMode.FastBeyond360)
+            _wheelTransform
+                .DORotate(new Vector3(0, 0, totalRotation), _spinDuration, RotateMode.FastBeyond360)
                 .SetEase(Ease.OutQuad);
         }
 
@@ -85,7 +87,13 @@ namespace TestCase.Gameplay
         
         private void OnSpinClicked()
         {
+            ToggleSpinButton(false);
             SpinWheel();
+        }
+
+        private void ToggleSpinButton(bool isEnabled)
+        {
+            _spinButton.interactable = isEnabled;
         }
 
         #endregion
