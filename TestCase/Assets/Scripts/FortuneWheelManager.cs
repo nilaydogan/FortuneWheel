@@ -20,8 +20,8 @@ namespace TestCase.Gameplay
         [SerializeField] private Sprite _wheelSilverSkin, _wheelGoldSkin, _wheelRegularSkin;
         [SerializeField] private Sprite _indicatorSilverSkin, _indicatorGoldSkin, _indicatorRegularSkin;
         [SerializeField] private Image _indicatorImage, _wheelImage;
+        [SerializeField] private Button _spinButton, _exitButton;
         
-        private Button _spinButton;
         private float _spinDuration = 5f;
         private List<WheelRewards.RewardData> _currentRewards;
 
@@ -39,27 +39,49 @@ namespace TestCase.Gameplay
 
         private void OnValidate()
         {
-            if (_spinButton == null)
-            {
-                _spinButton = GetComponentInChildren<Button>();
+            // if (_spinButton == null)
+            // {
+            //     //_spinButton = GetComponentInChildren<Button>();
+            //
+            //     if (_spinButton != null)
+            //     {
+            //         Debug.Log("Button reference set automatically.");
+            //         
+            //         _spinButton.onClick.RemoveAllListeners();
+            //         _spinButton.onClick.AddListener(OnSpinClicked);
+            //     }
+            //     else
+            //     {
+            //         Debug.LogWarning("Button reference not found.");
+            //     }
+            // }
 
-                if (_spinButton != null)
-                {
-                    Debug.Log("Button reference set automatically.");
-                    
-                    _spinButton.onClick.RemoveAllListeners();
-                    _spinButton.onClick.AddListener(OnSpinClicked);
-                }
-                else
-                {
-                    Debug.LogWarning("Button reference not found.");
-                }
+
+            if (_spinButton != null)
+            {
+                _spinButton.onClick.RemoveAllListeners();
+                _spinButton.onClick.AddListener(OnSpinClicked);
+            }
+
+            if (_exitButton)
+            {
+                _exitButton.onClick.RemoveAllListeners();
+                _exitButton.onClick.AddListener(OnExitButtonClicked);
             }
         }
 
         #endregion
 
         #region Private Methods
+        
+        private void OnExitButtonClicked()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
 
         private void SpinWheel()
         {
@@ -87,6 +109,7 @@ namespace TestCase.Gameplay
                 UpdateWheelRewards(hasWon);
                 UpdateWheelSkin();
                 ToggleSpinButton(true);
+                _exitButton.interactable = true;
             });
         }
 
@@ -121,6 +144,7 @@ namespace TestCase.Gameplay
         private void OnSpinClicked()
         {
             ToggleSpinButton(false);
+            _exitButton.interactable = _zoneManager.GetZoneType() != ZoneManager.ZoneType.Regular;
             SpinWheel();
         }
 
