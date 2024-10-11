@@ -8,27 +8,31 @@ namespace TestCase.Gameplay.UI
         [SerializeField] private RectTransform _content;
         [SerializeField] private Reward _rewardPrefab;
         
-        //private Dictionary<Reward,Reward> _rewardCountDictionary;
         private List<Reward> _rewardList;
 
-        public void AddReward(Reward rewardToBeAdded)
+        public void AddReward(Reward rewardToBeAdded, int value)
         {
             _rewardList ??= new List<Reward>();
+
+            foreach (var earnedReward in _rewardList)
+            {
+                if(rewardToBeAdded.CompareRewards(earnedReward, rewardToBeAdded))
+                {
+                    earnedReward.UpdateEarnRewardCount(value);
+                    return;
+                }
+            }
             
-            if (_rewardList.Contains(rewardToBeAdded))
-            {
-                rewardToBeAdded.UpdateEarnRewardCount(rewardToBeAdded.RewardData.RewardValue);
-            }
-            else
-            {
-                var reward = Instantiate(_rewardPrefab, _content);
-                reward.SetRewardData(rewardToBeAdded.RewardData, true);
-                _rewardList.Add(reward);
-            }
+            var reward = Instantiate(_rewardPrefab, _content);
+            reward.SetRewardData(rewardToBeAdded.RewardData,true);
+            _rewardList.Add(reward);
         }
         
         public void ClearRewards()
         {
+            if (_rewardList == null) return;
+            
+            _rewardList.ForEach(x => x.RewardData.RewardValue = 0);
             foreach (Transform child in _content)
             {
                 Destroy(child.gameObject);
@@ -36,7 +40,5 @@ namespace TestCase.Gameplay.UI
             
             _rewardList.Clear();
         }
-        
-        //todo: add a method to update the count of a reward
     }
 }

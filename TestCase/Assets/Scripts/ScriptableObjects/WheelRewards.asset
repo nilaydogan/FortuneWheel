@@ -13,69 +13,196 @@ MonoBehaviour:
   m_Name: WheelRewards
   m_EditorClassIdentifier: 
   _zoneRewardDataList:
-  - RewardList:
-    - RewardName: 0
-      RewardSprite: {fileID: 21300000, guid: 1e597a89d0fa37643b426587120b0285, type: 3}
-      RewardValue: 10
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 21300000, guid: 14d7830dce8f0d3469d1fbd184c8f10c, type: 3}
-      RewardValue: 100
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 21300000, guid: f773fb795df939348a0a8475bc88ee10, type: 3}
-      RewardValue: 1
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
+    RewardList:
+    - RewardType: 0
       RewardSprite: {fileID: 21300000, guid: 96b459e918924e943b983ca1c675295a, type: 3}
+      InitialValue: 0
       RewardValue: 0
+      IncreaseAmount: 0
       RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 21300000, guid: 14d7830dce8f0d3469d1fbd184c8f10c, type: 3}
-      RewardValue: 300
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: 063e7e74c4577fb40b0b2434bd773105, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 145, y: 145}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: fa67f9c8ddffca247bcad32f8ff3762f, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
       RewardSize: {x: 0, y: 0}
-    - RewardName: 0
+    - RewardType: 1
       RewardSprite: {fileID: 21300000, guid: 1e597a89d0fa37643b426587120b0285, type: 3}
-      RewardValue: 50
+      InitialValue: 5
+      RewardValue: 0
+      IncreaseAmount: 10
       RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 21300000, guid: 2b43a5bda189f6a48a46632eecb976c5, type: 3}
-      RewardValue: 1
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 5684c8fa2f2c06740b473e6e5ad2a398, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 1
       RewardSprite: {fileID: 21300000, guid: ec6120410a3de2f4fa77cc128ebb95e2, type: 3}
-      RewardValue: 1
-      RewardSize: {x: 0, y: 0}
-  - RewardList:
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+      InitialValue: 1
       RewardValue: 0
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: b27a64aab559d164987bb108d20dd700, type: 3}
+      InitialValue: 1
       RewardValue: 0
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 3
+      RewardSprite: {fileID: 21300000, guid: 4a643860f2f5d854b83c58e296a87ed9, type: 3}
+      InitialValue: 1
       RewardValue: 0
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 3
+      RewardSprite: {fileID: 21300000, guid: 25919d75588434c449be846b479580c0, type: 3}
+      InitialValue: 1
       RewardValue: 0
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: dad0df69887537840a47fe485191f97a, type: 3}
+      InitialValue: 1
       RewardValue: 0
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: 6e97b23538c69014491c31077a118a4e, type: 3}
+      InitialValue: 1
       RewardValue: 0
-      RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 14d7830dce8f0d3469d1fbd184c8f10c, type: 3}
+      InitialValue: 50
       RewardValue: 0
+      IncreaseAmount: 50
       RewardSize: {x: 0, y: 0}
-    - RewardName: 0
-      RewardSprite: {fileID: 0}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: c09e7a305000c614bbf03cc0f349810e, type: 3}
+      InitialValue: 1
       RewardValue: 0
+      IncreaseAmount: 0
       RewardSize: {x: 0, y: 0}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: fdcd9af3cf9c3d54f8a347a8411e55d0, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 70, y: 70}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: b6abd521c7099bf4193a0ac406a69a72, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 70, y: 70}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 4388b257222058d4995c8bbcc0a3159b, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: f773fb795df939348a0a8475bc88ee10, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 65, y: 65}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 5fad4977cc069a54898f1dca58eb6cc7, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 70, y: 70}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 5e61c291c97839943bccd1e749e77bf1, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 70, y: 70}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 1bbd8348c261bbd43847291e5203ea00, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 70, y: 70}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 2b43a5bda189f6a48a46632eecb976c5, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardType: 3
+      RewardSprite: {fileID: 21300000, guid: 9075c26a9787d9d4b80ea8551d8e3a86, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 70, y: 70}
+    - RewardType: 3
+      RewardSprite: {fileID: 21300000, guid: a9d8420d0310a9449a996322a3c61682, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: a2770bf684dbaab45aeb54d3c7ac733a, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: 6929c05938842314097c1b3c512b1c9f, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 100, y: 100}
+    - RewardType: 2
+      RewardSprite: {fileID: 21300000, guid: 1995b291bca74914fb91cbe8142be10a, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 0
+      RewardSize: {x: 0, y: 0}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 4b999b233a40e8246b1addcf244ca38d, type: 3}
+      InitialValue: 3
+      RewardValue: 0
+      IncreaseAmount: 2
+      RewardSize: {x: 40, y: 40}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 00f885388719cd24495bf7847bb88f71, type: 3}
+      InitialValue: 2
+      RewardValue: 0
+      IncreaseAmount: 3
+      RewardSize: {x: 40, y: 40}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: d4c81592726859d4e9564d6800b9174d, type: 3}
+      InitialValue: 5
+      RewardValue: 0
+      IncreaseAmount: 1
+      RewardSize: {x: 40, y: 40}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: ecd31c197f1a6a44086fbc18638e0f2d, type: 3}
+      InitialValue: 2
+      RewardValue: 0
+      IncreaseAmount: 1
+      RewardSize: {x: 40, y: 40}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: 9214fd692981e3b448d66fc4dd1e5699, type: 3}
+      InitialValue: 2
+      RewardValue: 0
+      IncreaseAmount: 2
+      RewardSize: {x: 40, y: 40}
+    - RewardType: 1
+      RewardSprite: {fileID: 21300000, guid: dc8317982b013fe49a75e046568496d9, type: 3}
+      InitialValue: 1
+      RewardValue: 0
+      IncreaseAmount: 1
+      RewardSize: {x: 40, y: 40}

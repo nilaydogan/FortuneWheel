@@ -20,8 +20,15 @@ namespace TestCase.Gameplay.UI
 
         public void SetZoneNumber(int zoneNumber, bool isCurrentZone)
         {
+            _zoneIndex = zoneNumber;
             _zoneNumberText.text = zoneNumber.ToString();
-            _bg.SetActive(isCurrentZone);
+            //_bg.SetActive(isCurrentZone);
+        }
+        
+        public void UpdateZoneNumber(int zoneNumber)
+        {
+            _zoneIndex = zoneNumber;
+            _zoneNumberText.text = zoneNumber.ToString();
         }
     }
 }
