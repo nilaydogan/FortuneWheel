@@ -39,7 +39,7 @@ namespace TestCase.Gameplay
             InitializeLevels();
             AdjustLevelSize();
 
-            UpdateZoneIndicator();
+            UpdateZoneScrollView();
             UpdateSafeZonesTexts();
         }
         
@@ -52,7 +52,7 @@ namespace TestCase.Gameplay
                 ResetLevels();
             }
             
-            UpdateZoneIndicator();
+            UpdateZoneScrollView();
             UpdateSafeZonesTexts();
         }
         
@@ -93,10 +93,13 @@ namespace TestCase.Gameplay
 
         private void ResetLevels()
         {
-            for (var i = 0; i < _activeLevels.Count; i++)
+            if (_activeLevels is { Count: > 0 })
             {
-                _activeLevels[i].SetZoneNumber(i + 1, CurrentZone == i);
+                _activeLevels.ForEach(level => Destroy(level.gameObject));
+                _activeLevels.Clear();
             }
+            
+            InitializeLevels();
         }
 
         private void CreateLevel(int index)
@@ -148,22 +151,7 @@ namespace TestCase.Gameplay
             if ((levelMinX - (levelMaxX - levelMinX) / 2.86f) < viewportMinX)
             {
                 _usePadding--;
-                // level.UpdateZoneNumber(GetNextLevelIndex());
-                //
-                // _activeLevels.RemoveAt(0);
-                // _activeLevels.Add(level);
-                // level.transform.SetAsLastSibling();
             }
-
-            // if (level.ZoneRectTransform.anchoredPosition.x + levelWidth / 2 < viewportMinX)
-            // {
-            //     level.UpdateZoneNumber(GetNextLevelIndex());
-            //
-            //     _activeLevels.RemoveAt(0);
-            //     _activeLevels.Add(level);
-            //     level.transform.SetAsLastSibling();
-            //     LayoutRebuilder.ForceRebuildLayoutImmediate(_zoneScrollView.content);
-            // }
 
             if ((levelMinX - (levelMaxX - levelMinX) / 4) < viewportMinX)
             {
@@ -174,7 +162,6 @@ namespace TestCase.Gameplay
                     return;
                 }
 
-                //if(!(_usePadding < 1))  return;
                 level.UpdateZoneNumber(GetNextLevelIndex());
 
                 // Move the level to the last sibling
@@ -191,7 +178,7 @@ namespace TestCase.Gameplay
             return (_activeLevels[^1].ZoneIndex + 1);
         }
         
-        private void UpdateZoneIndicator()
+        private void UpdateZoneScrollView()
         {
             var offset = Mathf.RoundToInt(_indicator.anchoredPosition.x - _levelPrefab.ZoneRectTransform.rect.width / 2);
             if (CurrentZone > 1)
@@ -207,8 +194,6 @@ namespace TestCase.Gameplay
                 _horizontalLayout.padding.left = offset;
             }
             
-            //_indicator.transform.SetAsLastSibling();
-            
             LayoutRebuilder.ForceRebuildLayoutImmediate(_zoneScrollView.content);
             
             CheckVisibleLevels();
@@ -218,17 +203,6 @@ namespace TestCase.Gameplay
         {
             var safeZone = ((CurrentZone / _everySafeZone) + 1) * _everySafeZone;
             var superZone = ((CurrentZone / _everySuperZone) + 1) * _everySuperZone;
-            
-            //if current zone is a safe zone, then show the next safe zone
-            // if (CurrentZone % _everySafeZone == 0)
-            // {
-            //     safeZone += _everySafeZone;
-            // }
-            //if current zone is a super zone, then show the next super zone
-            // if (CurrentZone % _everySuperZone == 0)
-            // {
-            //     superZone += _everySuperZone;
-            // }
 
             _safeZoneText.text = safeZone.ToString();
             _superZoneText.text = superZone.ToString();

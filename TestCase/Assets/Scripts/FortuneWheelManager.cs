@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using TestCase.Gameplay.Data;
 using TestCase.Gameplay.UI;
@@ -20,53 +19,73 @@ namespace TestCase.Gameplay
         [SerializeField] private Sprite _wheelSilverSkin, _wheelGoldSkin, _wheelRegularSkin;
         [SerializeField] private Sprite _indicatorSilverSkin, _indicatorGoldSkin, _indicatorRegularSkin;
         [SerializeField] private Image _indicatorImage, _wheelImage;
-        [SerializeField] private Button _spinButton, _exitButton;
-        
+        [SerializeField] private Button _spinButton, _exitButton, _quitButton, _retryButton;
+        [SerializeField] private WinLosePopup _winLosePopup;
+        [SerializeField] private GameObject _popupsParent;
+
         private float _spinDuration = 5f;
         private List<WheelRewards.RewardData> _currentRewards;
+        private bool _isSpinning;
+        private Sequence _spinSequence;
 
         #endregion
-
-        #region Unity Methods
-
+        
         private void Start()
         {
+            #if !UNITY_EDITOR
+            ValidateButtons();
+            #endif
             _zoneManager.Initialize();
             _wheel.Initialize();
+
             _currentRewards = _wheelRewards.GetRewardList(_zoneManager.GetZoneType(), false, _zoneManager.CurrentZone);
             _wheel.SetUpRewards(_currentRewards);
         }
 
+        #region Private Methods
+
+        private void Reset()
+        {
+            //_zoneManager.Initialize();
+            _wheel.Initialize();
+            _wheelRewards.Initialize();
+            _currentRewards = _wheelRewards.GetRewardList(_zoneManager.GetZoneType(), false, _zoneManager.CurrentZone);
+            _wheel.SetUpRewards(_currentRewards);
+            _earnedRewards.ClearRewards();
+            _zoneManager.UpdateCurrentZone(false);
+            UpdateWheelSkin();
+            _spinButton.interactable = true;
+        }
+        
         private void OnValidate()
         {
-            // if (_spinButton == null)
-            // {
-            //     //_spinButton = GetComponentInChildren<Button>();
-            //
-            //     if (_spinButton != null)
-            //     {
-            //         Debug.Log("Button reference set automatically.");
-            //         
-            //         _spinButton.onClick.RemoveAllListeners();
-            //         _spinButton.onClick.AddListener(OnSpinClicked);
-            //     }
-            //     else
-            //     {
-            //         Debug.LogWarning("Button reference not found.");
-            //     }
-            // }
-
-
+            ValidateButtons();
+        }
+        
+        private void ValidateButtons()
+        {
             if (_spinButton != null)
             {
                 _spinButton.onClick.RemoveAllListeners();
                 _spinButton.onClick.AddListener(OnSpinClicked);
             }
 
-            if (_exitButton)
+            if (_exitButton != null)
             {
                 _exitButton.onClick.RemoveAllListeners();
                 _exitButton.onClick.AddListener(OnExitButtonClicked);
+            }
+            
+            if(_quitButton != null)
+            {
+                _quitButton.onClick.RemoveAllListeners();
+                _quitButton.onClick.AddListener(OnQuitButtonClicked);
+            }
+            
+            if(_retryButton != null)
+            {
+                _retryButton.onClick.RemoveAllListeners();
+                _retryButton.onClick.AddListener(OnRetryButtonClicked);
             }
         }
 
@@ -75,6 +94,24 @@ namespace TestCase.Gameplay
         #region Private Methods
         
         private void OnExitButtonClicked()
+        {
+            if(_isSpinning && _zoneManager.GetZoneType() == ZoneManager.ZoneType.Regular) return;
+            
+            _spinSequence.Kill();
+            _popupsParent.SetActive(true);
+            
+            var finalRewards = _earnedRewards.GetRewardList();
+            _winLosePopup.ShowWinPopup(finalRewards);
+        }
+
+        private void OnRetryButtonClicked()
+        {
+            Reset();
+            _winLosePopup.HidePopup();
+            _popupsParent.SetActive(false);
+        }
+        
+        private void OnQuitButtonClicked()
         {
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -85,6 +122,7 @@ namespace TestCase.Gameplay
 
         private void SpinWheel()
         {
+            Debug.Log("Spinning wheel");
             var rewardCount = _wheel.GetRewardCount();
             
             //select a random reward to stop at
@@ -96,20 +134,27 @@ namespace TestCase.Gameplay
             var extraRotations = Random.Range(3, 6);
             var totalRotation = -(extraRotations * 360f - targetAngle);
 
-            var sequence = DOTween.Sequence()
+            _spinSequence = DOTween.Sequence()
                 .Join(_wheelTransform
                 .DORotate(new Vector3(0, 0, totalRotation), _spinDuration, RotateMode.FastBeyond360)
                 .SetEase(Ease.OutQuad))
                 .AppendInterval(.5f);
 
-            sequence.OnComplete(() =>
+            _spinSequence.OnKill(() =>
             {
-                var hasWon = GrantReward(targetRewardIndex, _currentRewards[targetRewardIndex].RewardValue);
+                _wheelTransform.DOKill();
+                _wheelTransform.localEulerAngles = Vector3.zero;
+            });
+
+            _spinSequence.OnComplete(() =>
+            {
+                var hasWon = GrantReward(targetRewardIndex);
                 _zoneManager.UpdateCurrentZone(hasWon);
                 UpdateWheelRewards(hasWon);
                 UpdateWheelSkin();
                 ToggleSpinButton(true);
                 _exitButton.interactable = true;
+                _isSpinning = false;
             });
         }
 
@@ -143,6 +188,7 @@ namespace TestCase.Gameplay
         
         private void OnSpinClicked()
         {
+            _isSpinning = true;
             ToggleSpinButton(false);
             _exitButton.interactable = _zoneManager.GetZoneType() != ZoneManager.ZoneType.Regular;
             SpinWheel();
@@ -153,19 +199,21 @@ namespace TestCase.Gameplay
             _spinButton.interactable = isEnabled;
         }
         
-        private bool GrantReward(int rewardIndex, int value)
+        private bool GrantReward(int rewardIndex)
         {
-            //todo: show the reward with a popup
-            //todo: check if its a bomb
             var earnedReward = _wheel.GetReward(rewardIndex);
 
             if (earnedReward.RewardData.RewardType == WheelRewards.RewardType.Bomb)
             {
                 _earnedRewards.ClearRewards();
+
+                _popupsParent.SetActive(true);
+                _winLosePopup.ShowLosePopup();
+
                 return false;
             }
             
-            _earnedRewards.AddReward(earnedReward, value);
+            _earnedRewards.AddReward(earnedReward);
             return true;
         }
 

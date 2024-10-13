@@ -1,0 +1,9 @@
+com.testcase.launcher-pngs-0 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\generated\res\pngs\debug
+com.testcase.launcher-resValues-1 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\generated\res\resValues\debug
+com.testcase.launcher-rs-2 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\generated\res\rs\debug
+com.testcase.launcher-mergeDebugResources-3 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.testcase.launcher-mergeDebugResources-4 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.testcase.launcher-merged_res-5 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\build\intermediates\merged_res\debug
+com.testcase.launcher-debug-6 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\debug\res
+com.testcase.launcher-main-7 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\res
+com.testcase.launcher-packaged_res-8 E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\packaged_res\debug

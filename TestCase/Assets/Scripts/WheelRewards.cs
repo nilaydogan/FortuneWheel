@@ -17,6 +17,11 @@ namespace TestCase.Gameplay.Data
         
         #region Public Methods
         
+        public void Initialize()
+        {
+            ResetRewardValues();
+        }
+        
         public List<RewardData> GetRewardList(ZoneManager.ZoneType zoneType)
         {
             var random = new Random();
@@ -64,6 +69,14 @@ namespace TestCase.Gameplay.Data
             }
             
             return rewards;
+        }
+        
+        private void ResetRewardValues()
+        {
+            foreach (var rewardData in _zoneRewardDataList.RewardList)
+            {
+                rewardData.RewardValue = rewardData.InitialValue;
+            }
         }
         
         private List<RewardData> GetRandomRewards(RewardType rewardType, int count, List<RewardData> rewardList, Random random)

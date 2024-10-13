@@ -1,0 +1,115 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.unity3d.player" >
+5
+6    <uses-sdk android:minSdkVersion="22" />
+6-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
+7
+8    <uses-feature android:glEsVersion="0x00030000" />
+8-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:3-52
+8-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:17-49
+9    <uses-feature
+9-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:3-91
+10        android:name="android.hardware.vulkan.version"
+10-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:17-63
+11        android:required="false" />
+11-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:64-88
+12    <uses-feature
+12-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:3-88
+13        android:name="android.hardware.touchscreen"
+13-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:17-60
+14        android:required="false" />
+14-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:61-85
+15    <uses-feature
+15-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:3-99
+16        android:name="android.hardware.touchscreen.multitouch"
+16-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:17-71
+17        android:required="false" />
+17-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:21:72-96
+18    <uses-feature
+18-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:3-108
+19        android:name="android.hardware.touchscreen.multitouch.distinct"
+19-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:17-80
+20        android:required="false" />
+20-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:81-105
+21
+22    <application android:extractNativeLibs="true" >
+22-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:3-17:17
+22-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:16-48
+23        <activity
+23-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:5-11:16
+24            android:name="com.unity3d.player.UnityPlayerActivity"
+24-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:15-68
+25            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+25-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:188-369
+26            android:exported="true"
+26-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:441-464
+27            android:hardwareAccelerated="false"
+27-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:405-440
+28            android:launchMode="singleTask"
+28-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:156-187
+29            android:resizeableActivity="false"
+29-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:370-404
+30            android:screenOrientation="reverseLandscape"
+30-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:111-155
+31            android:theme="@style/UnityThemeSelector" >
+31-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:69-110
+32            <intent-filter>
+32-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:7-8:23
+33                <action android:name="android.intent.action.MAIN" />
+33-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:9-61
+33-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:17-58
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:9-69
+35-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:19-66
+36            </intent-filter>
+37
+38            <meta-data
+38-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:7-82
+39                android:name="unityplayer.UnityActivity"
+39-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:18-58
+40                android:value="true" />
+40-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:59-79
+41            <meta-data
+41-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:7-78
+42                android:name="android.notch_support"
+42-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:18-54
+43                android:value="true" />
+43-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:55-75
+44        </activity>
+45
+46        <meta-data
+46-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:5-69
+47            android:name="unity.splash-mode"
+47-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:16-48
+48            android:value="0" />
+48-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:49-66
+49        <meta-data
+49-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:5-74
+50            android:name="unity.splash-enable"
+50-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:16-50
+51            android:value="True" />
+51-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:51-71
+52        <meta-data
+52-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:5-78
+53            android:name="unity.launch-fullscreen"
+53-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:16-54
+54            android:value="True" />
+54-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:55-75
+55        <meta-data
+55-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:5-81
+56            android:name="notch.config"
+56-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:16-43
+57            android:value="portrait|landscape" />
+57-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:44-78
+58        <meta-data
+58-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:5-84
+59            android:name="unity.auto-report-fully-drawn"
+59-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:16-60
+60            android:value="true" />
+60-->E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:61-81
+61    </application>
+62
+63</manifest>

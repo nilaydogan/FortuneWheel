@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using TestCase.Gameplay.Data;
 using UnityEngine;
 
 namespace TestCase.Gameplay.UI
@@ -10,7 +12,7 @@ namespace TestCase.Gameplay.UI
         
         private List<Reward> _rewardList;
 
-        public void AddReward(Reward rewardToBeAdded, int value)
+        public void AddReward(Reward rewardToBeAdded)
         {
             _rewardList ??= new List<Reward>();
 
@@ -18,7 +20,7 @@ namespace TestCase.Gameplay.UI
             {
                 if(rewardToBeAdded.CompareRewards(earnedReward, rewardToBeAdded))
                 {
-                    earnedReward.UpdateEarnRewardCount(value);
+                    earnedReward.UpdateEarnRewardCount(rewardToBeAdded.RewardData.RewardValue);
                     return;
                 }
             }
@@ -39,6 +41,14 @@ namespace TestCase.Gameplay.UI
             }
             
             _rewardList.Clear();
+        }
+        
+        public List<WheelRewards.RewardData> GetRewardList()
+        {
+            if (_rewardList is { Count: > 0 })
+                return _rewardList.Select(reward => reward.RewardData).ToList();
+            else
+                return null;
         }
     }
 }

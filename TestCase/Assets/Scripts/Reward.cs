@@ -40,5 +40,13 @@ namespace TestCase.Gameplay
         {
             return reward1._icon.sprite == reward2._icon.sprite;
         }
+        
+        public void SetFinalRewardData(WheelRewards.RewardData rewardData)
+        {
+            _data = rewardData;
+            _icon.sprite = _data.RewardSprite;
+            _count = rewardData.RewardValue;
+            _valueText.text = _count.ToString();
+        }
     }
 }

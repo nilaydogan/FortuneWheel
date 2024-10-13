@@ -49,6 +49,11 @@ namespace TestCase.Gameplay.UI
 
         private void CreateRewards()
         {
+            if (_rewardsList is { Count: > 0 })
+            {
+                _rewardsList.ForEach(reward => Destroy(reward.gameObject));
+                _rewardsList.Clear();
+            }
             _rewardsList = new List<Reward>();
             for (var i = 0; i < 8; i++)
             {

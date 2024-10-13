@@ -1,0 +1,19 @@
+<libraries>
+  <library
+      name="E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle@@:unityLibrary::release"
+      jars="E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\.transforms\88b78036e03d14c3085ddd76ca169610\transformed\out\jars\classes.jar;E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\.transforms\88b78036e03d14c3085ddd76ca169610\transformed\out\jars\libs\R.jar;E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\.transforms\88b78036e03d14c3085ddd76ca169610\transformed\out\jars\libs\unity-classes.jar"
+      resolved="Gradle:unityLibrary:unspecified"
+      folder="E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\.transforms\88b78036e03d14c3085ddd76ca169610\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="__local_aars__:E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\libs\unity-classes.jar:unspecified@jar"
+      jars="E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\libs\unity-classes.jar"
+      resolved="__local_aars__:E:\UnityProjects\FortuneWheel\TestCase\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\libs\unity-classes.jar:unspecified"/>
+</libraries>
