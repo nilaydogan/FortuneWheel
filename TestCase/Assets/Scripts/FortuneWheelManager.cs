@@ -46,7 +46,6 @@ namespace TestCase.Gameplay
 
         private void Reset()
         {
-            //_zoneManager.Initialize();
             _wheel.Initialize();
             _wheelRewards.Initialize();
             _currentRewards = _wheelRewards.GetRewardList(_zoneManager.GetZoneType(), false, _zoneManager.CurrentZone);
@@ -122,7 +121,6 @@ namespace TestCase.Gameplay
 
         private void SpinWheel()
         {
-            Debug.Log("Spinning wheel");
             var rewardCount = _wheel.GetRewardCount();
             
             //select a random reward to stop at

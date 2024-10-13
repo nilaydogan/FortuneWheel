@@ -3,7 +3,7 @@
     "m_SelectedProcess": {
         "deviceId": "R5CW7217ZWP",
         "name": "com.testcase",
-        "processId": 17116,
+        "processId": 19916,
         "exited": false
     },
     "m_SelectedPriority": 3,
@@ -24,6 +24,18 @@
             "deviceId": "R5CW7217ZWP",
             "name": "com.testcase",
             "processId": 17116,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CW7217ZWP",
+            "name": "com.testcase",
+            "processId": 18010,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CW7217ZWP",
+            "name": "com.testcase",
+            "processId": 19916,
             "exited": false
         }
     ],
